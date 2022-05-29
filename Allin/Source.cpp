@@ -13,10 +13,6 @@ void sellerProgram(Seller& seller);
 
 int main()
 {
-	User u("Ahmed", "1", "1", "01111111111", "Al-Narges");
-	user[u.email] = u;
-	User m("Kandeel", "2", "2", "01149340900", "Al-Narges");
-	user[m.email] = m;
 	startUp();
 	return 0;
 }
@@ -25,6 +21,7 @@ void startUp()
 {
 	while (true)
 	{
+		cout << "Welcome to Allin Marketplace !!\n";
 	wrongc:
 		cout << "press 1 to sign in, 2 to sign up and any other number to exit\n";
 		int n;
