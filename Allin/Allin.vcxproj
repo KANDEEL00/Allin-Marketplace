@@ -139,19 +139,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="D:\FCIS\2nd Year\4th Semeter\DS Project\Allin\zcx\Cart.h" />
-    <ClInclude Include="D:\FCIS\2nd Year\4th Semeter\DS Project\Allin\zcx\Customer.h" />
-    <ClInclude Include="D:\FCIS\2nd Year\4th Semeter\DS Project\Allin\zcx\Product.h" />
-    <ClInclude Include="D:\FCIS\2nd Year\4th Semeter\DS Project\Allin\zcx\Seller.h" />
-    <ClInclude Include="D:\FCIS\2nd Year\4th Semeter\DS Project\Allin\zcx\User.h" />
+    <ClInclude Include="Cart.h" />
+    <ClInclude Include="Customer.h" />
+    <ClInclude Include="Product.h" />
+    <ClInclude Include="Seller.h" />
+    <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="D:\FCIS\2nd Year\4th Semeter\DS Project\Allin\zcx\Cart.cpp" />
-    <ClCompile Include="D:\FCIS\2nd Year\4th Semeter\DS Project\Allin\zcx\Customer.cpp" />
-    <ClCompile Include="D:\FCIS\2nd Year\4th Semeter\DS Project\Allin\zcx\Product.cpp" />
-    <ClCompile Include="D:\FCIS\2nd Year\4th Semeter\DS Project\Allin\zcx\Seller.cpp" />
-    <ClCompile Include="D:\FCIS\2nd Year\4th Semeter\DS Project\Allin\zcx\Source.cpp" />
-    <ClCompile Include="D:\FCIS\2nd Year\4th Semeter\DS Project\Allin\zcx\User.cpp" />
+    <ClCompile Include="Cart.cpp" />
+    <ClCompile Include="Customer.cpp" />
+    <ClCompile Include="Product.cpp" />
+    <ClCompile Include="Seller.cpp" />
+    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="User.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
