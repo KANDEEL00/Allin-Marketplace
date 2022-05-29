@@ -7,8 +7,7 @@ void Product::display()
 		<< " , Category : " << category;
 	if (quantity)cout << " , Quantity : " << quantity;
 	else cout<< " , Out of Stock ";
-	cout << " , sellerEmail : " << sellerEmail
-		<< " , id : " << id
+	cout << " , id : " << id
 		<< " , rate : " << rate
 		<< " }";
 }
@@ -19,6 +18,10 @@ void Product::addRate(double r)
 }
 void Product::removeRate(double r)
 {
-	rate = (rate * rateCounter - r) / (rateCounter - 1);
 	rateCounter--;
+	if (rateCounter == 0)
+		rate = 0;
+	else
+		rate = (rate * rateCounter - r) / (rateCounter - 1);
+	
 }

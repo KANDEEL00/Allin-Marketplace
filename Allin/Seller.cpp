@@ -15,14 +15,14 @@ void Seller::addProduct()
 	newProd.category = categoryList[n - 1];
 	cout << "quantity : ";
 	cin >> newProd.quantity;
-	newProd.sellerEmail = this->email;
+	newProd.sellerEmail = email;
 	newProd.id = newProd.counter;
 	newProd.counter++;
 	products.push_back(newProd);
 }
 void Seller::displayProducts()
 {
-	for (unsigned int i = 0; i < products.size(); i++) {
+	for (int i = 0; i < products.size(); i++) {
 		cout << i << " - ";
 		products[i].display();
 		cout << endl;
@@ -41,13 +41,13 @@ void Seller::deleteProduct()
 	displayProducts();
 	if (!products.empty())
 	{
-		int i;
 		cout << "enter number of the product you want to delete" << endl;
+		int i;
 		cin >> i;
 		products.erase(products.begin() + i);
 	}
 	else
-		cout << "you sell no items\n";
+		cout << "you have no products\n";
 }
 void Seller::updateProduct()
 {
@@ -69,7 +69,7 @@ void Seller::updateProduct()
 		while (otherUpdate)
 		{
 			cout << "select what do you want to edit" << endl;
-			cout << " 1 -  name , 2 - Price  , 3 - category  , 4 - quantity , 5 - sellerID , 6 - id" << endl;
+			cout << " 1 -  name , 2 - Price  , 3 - category  , 4 - quantity " << endl;
 			int c;
 			cin >> c;
 			switch (c)
@@ -89,10 +89,6 @@ void Seller::updateProduct()
 			case 4:
 				cout << "quantity : " << endl;
 				cin >> products[i].quantity;
-				break;
-			case 5:
-				cout << "id : " << endl;
-				cin >> products[i].id;
 				break;
 			default:
 				break;

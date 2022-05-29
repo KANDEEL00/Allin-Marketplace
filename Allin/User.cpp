@@ -1,6 +1,8 @@
 #include "User.h"
 User::User()
 {
+	seller.email = email;
+	customer.email = email;
 }
 User::User(string name, string email, string password, string phoneNum, string address)
 {
@@ -10,6 +12,8 @@ User::User(string name, string email, string password, string phoneNum, string a
 	this->phoneNum = phoneNum;
 	this->address = address;
 	this->customer = customer;
+	seller.email = email;
+	customer.email = email;
 }
 void User::userSignUp(unordered_map<string, User>& user)
 {

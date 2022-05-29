@@ -28,10 +28,11 @@ void Cart::total()
 {
 	float total = 0;
 	float r;
+	cout << "\n";
 	for (unsigned int n = 0; n < items.size(); n++)
 	{
 		r = items[n].price * items[n].quantity;
-		cout << items[n].quantity << items[n].name << "=" << r << endl;
+		cout << items[n].name <<" * " << items[n].quantity << "=" << r << endl;
 		total += r;
 	}
 	cout << "\n\ntotal:" << total << endl;

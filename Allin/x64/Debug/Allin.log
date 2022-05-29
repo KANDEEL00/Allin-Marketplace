@@ -1,0 +1,4 @@
+﻿  Customer.cpp
+C:\Users\Kandeel\Downloads\Allin-Marketplace-master\Allin-Marketplace-master\Allin\Customer.cpp(13,47): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Kandeel\Downloads\Allin-Marketplace-master\Allin-Marketplace-master\Allin\Customer.cpp(111): warning C4715: 'Customer::selectItem': not all control paths return a value
+  Allin.vcxproj -> C:\Users\Kandeel\Downloads\Allin-Marketplace-master\Allin-Marketplace-master\x64\Debug\Allin.exe

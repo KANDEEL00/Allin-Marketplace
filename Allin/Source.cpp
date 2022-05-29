@@ -13,6 +13,11 @@ void sellerProgram(Seller& seller);
 
 int main()
 {
+
+	User u("Ahmed", "1", "1", "01149170090", "Al-Narges");
+	user[u.email] = u;
+	User m("Kandeel", "2", "2", "01149340900", "Al-Narges");
+	user[m.email] = m;
 	startUp();
 	return 0;
 }
@@ -23,7 +28,7 @@ void startUp()
 	{
 		cout << "Welcome to Allin Marketplace !!\n";
 	wrongc:
-		cout << "press 1 to sign in, 2 to sign up and any other number to exit\n";
+		cout << "press 1 to log in, 2 to sign up and any other number to exit\n";
 		int n;
 		cin >> n;
 		if (n == 1)
@@ -85,8 +90,9 @@ start:
 		break;
 
 	case 4:
-		customer.cart.displayCart();
-		if (true) {
+		if (customer.cart.items.empty())
+			cout << "your cart is empty\n";
+		else {
 			Product returnedItem = customer.returnItem(allProduct);
 			user[returnedItem.sellerEmail].seller.returnItem(returnedItem);
 		}

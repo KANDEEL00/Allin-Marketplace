@@ -44,14 +44,9 @@ bool Customer::selectCategory(vector<Product>& allProduct, vector<Product>& tmpP
 			tmpProduct.push_back(allProduct[i]);
 		}
 	}
-	for (int i = 0; i < tmpProduct.size(); i++)
-	{
-		cout << "number: " << i << "-";
-		tmpProduct[i].display();
-	}
 	if (!tmpProduct.empty())
 	{
-		for (unsigned int i = 0; i < tmpProduct.size(); i++)
+		for (int i = 0; i < tmpProduct.size(); i++)
 		{
 			cout << i << " - ";
 			tmpProduct[i].display();
@@ -69,6 +64,7 @@ Product Customer::selectItem(vector<Product>& allProduct, vector<Product>& tmpPr
 {
 	while (true)
 	{
+	enterQuantity:
 		cout << "enter number of the item you want to add or -1 to return\n";
 		int choice;
 		cin >> choice;
@@ -76,7 +72,7 @@ Product Customer::selectItem(vector<Product>& allProduct, vector<Product>& tmpPr
 		{
 			Product selectedItem = tmpProduct[choice];
 			//Quantity
-		enterQuantity:
+		
 			cout << "enter quantity\n";
 			int quantity;
 			cin >> quantity;
@@ -89,19 +85,27 @@ Product Customer::selectItem(vector<Product>& allProduct, vector<Product>& tmpPr
 				goto enterQuantity;
 			}
 			//rate
+			re:
 			cout << "enter rating from 1 to 5\n";
-			cin >> selectedItem.rate;
+			int n;
+			cin >> n;
+			if (1 > n || n > 5)
+				goto re;
+			selectedItem.rate= n;
 			//allProduct
-			allProduct[choice].quantity -= selectedItem.quantity;
-			allProduct[choice].addRate(selectedItem.rate);
-
+			for (int i = 0; i < allProduct.size(); i++) {
+				if (tmpProduct[choice].id == allProduct[i].id) {
+					allProduct[i].quantity -= selectedItem.quantity;
+					allProduct[i].addRate(selectedItem.rate);
+				}
+			}
 			cart.addItem(selectedItem);
 			return selectedItem;
 		}
 		else if (choice == -1)
 			break;
 		else
-			cout << "enter a valid number";
+			cout << "enter a valid number\n";
 	}
 	tmpProduct.clear();
 }
