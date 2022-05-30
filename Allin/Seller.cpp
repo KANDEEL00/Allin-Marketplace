@@ -4,6 +4,7 @@ Seller::Seller()
 }
 void Seller::addProduct()
 {
+	system("cls");
 	Product newProd;
 	cout << "name : ";
 	cin >> newProd.name;
@@ -22,6 +23,7 @@ void Seller::addProduct()
 }
 void Seller::displayProducts()
 {
+	system("cls");
 	for (int i = 0; i < products.size(); i++) {
 		cout << i << " - ";
 		products[i].display();
@@ -30,6 +32,7 @@ void Seller::displayProducts()
 }
 void Seller::displaySoldProducts()
 {
+	system("cls");
 	for (unsigned int i = 0; i < soldProducts.size(); i++) {
 		cout << i << " - ";
 		soldProducts[i].display();
@@ -38,6 +41,7 @@ void Seller::displaySoldProducts()
 }
 void Seller::deleteProduct()
 {
+	system("cls");
 	displayProducts();
 	if (!products.empty())
 	{
@@ -51,6 +55,7 @@ void Seller::deleteProduct()
 }
 void Seller::updateProduct()
 {
+	system("cls");
 	bool otherProduct = 1;
 	if (products.empty())
 	{

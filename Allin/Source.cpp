@@ -13,11 +13,6 @@ void sellerProgram(Seller& seller);
 
 int main()
 {
-
-	User u("Ahmed", "1", "1", "01149170090", "Al-Narges");
-	user[u.email] = u;
-	User m("Kandeel", "2", "2", "01149340900", "Al-Narges");
-	user[m.email] = m;
 	startUp();
 	return 0;
 }
@@ -26,8 +21,8 @@ void startUp()
 {
 	while (true)
 	{
+		system("cls");
 		cout << "Welcome to Allin Marketplace !!\n";
-	wrongc:
 		cout << "press 1 to log in, 2 to sign up and any other number to exit\n";
 		int n;
 		cin >> n;
@@ -35,6 +30,7 @@ void startUp()
 		{
 			string mail = User::userLogIn(user);
 			if (mail != "") {
+				system("cls");
 				cout << "WELCOME " << user[mail].name << " !!\n";
 				cout << "press 1 for Customers, 2 for Sellers and any other number to exit\n";
 				int choice;
@@ -43,13 +39,13 @@ void startUp()
 					customerProgram(user[mail].customer);
 				else if (choice == 2)
 					sellerProgram(user[mail].seller);
-				goto wrongc;
+				continue;
 			}
 		}
 		else if (n == 2)
 		{
 			User::userSignUp(user);
-			goto wrongc;
+			continue;
 		}
 		else
 			break;
@@ -83,6 +79,8 @@ start:
 		break;
 
 	case 3:
+
+		system("cls");
 		customer.cart.displayCart();
 		if (customer.cart.items.empty())
 			cout << "your cart is empty\n";
@@ -90,8 +88,10 @@ start:
 		break;
 
 	case 4:
-		if (customer.cart.items.empty())
+		if (customer.cart.items.empty()) {
+			system("cls");
 			cout << "your cart is empty\n";
+		}
 		else {
 			Product returnedItem = customer.returnItem(allProduct);
 			user[returnedItem.sellerEmail].seller.returnItem(returnedItem);
@@ -101,6 +101,7 @@ start:
 
 	case 5:
 		if (!customer.cart.items.empty()) {
+			system("cls");
 			customer.cart.total();
 			cout << "To checkout press 1" << endl;
 			int choice;
@@ -116,6 +117,7 @@ start:
 		}
 		else
 		{
+			system("cls");
 			cout << "your cart is empty add items" << endl;
 			goto start;
 		}

@@ -4,6 +4,8 @@ Customer::Customer()
 }
 bool Customer::search(vector<Product>& allProduct, vector<Product>& tmpProduct)
 {
+
+	system("cls");
 	string seachString;
 	cout << "Search : ";
 	cin >> seachString;
@@ -28,12 +30,16 @@ bool Customer::search(vector<Product>& allProduct, vector<Product>& tmpProduct)
 	}
 	else
 	{
+
+		system("cls");
 		cout << "Not Found\n";
 		return false;
 	}
 }
 bool Customer::selectCategory(vector<Product>& allProduct, vector<Product>& tmpProduct)
 {
+
+	system("cls");
 	cout << "category : 1 for Appliances, 2 for Cars, 3 for Clothing, 4 for Electronics, 5 for Toys \n";
 	int choice;
 	cin >> choice;
@@ -56,6 +62,8 @@ bool Customer::selectCategory(vector<Product>& allProduct, vector<Product>& tmpP
 	}
 	else
 	{
+
+		system("cls");
 		cout << "Not Found\n";
 		return false;
 	}
@@ -100,17 +108,21 @@ Product Customer::selectItem(vector<Product>& allProduct, vector<Product>& tmpPr
 				}
 			}
 			cart.addItem(selectedItem);
+			system("cls");
 			return selectedItem;
 		}
 		else if (choice == -1)
 			break;
-		else
+		else {
+			system("cls");
 			cout << "enter a valid number\n";
+		}
 	}
 	tmpProduct.clear();
 }
 Product Customer::returnItem(vector<Product>& allProduct)
 {
+	system("cls");
 	Product returnedItem;
 	cart.displayCart();
 	cout << "enter number of item you want to remove\n" << endl;
